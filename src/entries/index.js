@@ -1,20 +1,30 @@
 import $ from '../../common/lib/zepto.min'
-// import $ from '../../static/zepto.min.js'
-// import aside from '../components/aside.hbs'
-// import header from '../components/header.hbs'
-// import content from '../components/content.hbs'
-// import list from '../components/list-item.hbs'
-import indexBar from '@c/index.hbs'
+import '../../common/lib/flexible.min'
 import '../css/index.css'
 import '../../common/css/reset.css'
-// $('#index').append(header({}))
-// $('#index').append(aside({}))
+import HTTP from '../../common/lib/request'
+import indexBar from '@c/index.hbs'
+
 $(function () {
   $('#index').append(indexBar([{
     title: '主页',
     desc: '数据列表'
   }]))
+  $('.request').tap(function () {
+    HTTP({
+      url: 'http://ldtest.spicu.com.cn/leaderAppApi/test/study/userMedalRanking/getMedalNum',
+      param: {
+        specialId: '6d2f4a0e085c4827be468452874eca41',
+        userId: '46db28cef871485f88fc1e1b3ba77521',
+        token: '46db28cef871485f88fc1e1b3ba77521B9D903E696C54E070705EE5C69E25316'
+
+      }
+    }).done(r => {
+      console.log(r)
+    })
+  })
 })
+
 // $('.tr-id').click(function () {
 //   alert('111')
 //   location.href = '../htmls/detail.html'

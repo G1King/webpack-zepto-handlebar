@@ -84,12 +84,12 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
-    ],
+    ]
 
-    loaders: [{
-      test: require.resolve('zepto'),
-      loader: 'exports-loader?window.Zepto!script-loader'
-    }]
+    // loaders: [{
+    //   test: resolve('common/lib/zepto.min'),
+    //   loader: 'exports-loader?window.Zepto!script-loader'
+    // }]
 
   },
   node: {
@@ -106,8 +106,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: resolve('static/zepto.min.js'),
-      Zepto: resolve('static/zepto.min.js')
+      $: resolve('common/lib/zepto.min'),
+      Zepto: resolve('common/lib/zepto.min')
     })
   ]
 }

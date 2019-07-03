@@ -10,9 +10,6 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0"
-  },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",

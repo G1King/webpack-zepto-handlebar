@@ -22,7 +22,6 @@ htmls = htmls.map(function (html) {
     inject: true,
     chunks: [name, 'vendor', 'manifest'],
     minify: {
-      removeAttributeQuotes: true,
       removeComments: true,
       collapseWhitespace: true,
       removeScriptTypeAttributes: true,
